@@ -15,7 +15,6 @@ function Section(props) {
         (0.5 * window.innerHeight) / height,
         1
       );
-      console.log(scale);
 
       sectionRef.current.style.transform = `scale(${scale})`;
     };

@@ -11,7 +11,7 @@ function TimetableA4(props) {
 
   const { name, show, timetable } = props;
 
-  const rotate = () => {
+  /* const rotate = () => {
     setLandscape((prev) => !prev);
   };
 
@@ -30,9 +30,10 @@ function TimetableA4(props) {
           onClick={rotate}
         />
       </header>
-      <Stundenplan show={show} timetable={timetable} class={styles.timetable} />
+      
     </div>
-  );
+  ); */
+  return <Stundenplan show={show} timetable={timetable} class={styles.timetable} />
 }
 
 export default TimetableA4;

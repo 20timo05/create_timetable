@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useRef } from "react";
 import context from "../../store/context";
 
 import { createTimeTable } from "../../data/timetableHelpers";
@@ -22,7 +22,7 @@ function TimetablePage() {
   ) {
     return <></>;
   }
-  
+
   const userTimetable = createTimeTable(timetable, schoolClass, courses);
   const [show, setShow] = useState({
     course: true,
@@ -30,8 +30,30 @@ function TimetablePage() {
     room: true,
   });
 
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    if (!sectionRef?.current) return;
+
+    const resizeHandler = () => {
+      const { height, width } = sectionRef.current.getBoundingClientRect();
+
+      const scale = Math.min(
+        (0.5 * window.innerWidth) / width,
+        (0.5 * window.innerHeight) / height,
+        1
+      );
+
+      sectionRef.current.style.transform = `scale(${scale})`;
+    };
+
+    window.addEventListener("resize", resizeHandler);
+    resizeHandler();
+    return () => window.removeEventListener("resize", resizeHandler);
+  }, [sectionRef]);
+
   return (
-    <section className={styles.wrapper}>
+    <section ref={sectionRef} className={styles.wrapper}>
       <div className={`${styles.exportWrapper} ${styles.options}`}>
         <label>
           <input
