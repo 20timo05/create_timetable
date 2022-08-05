@@ -1,0 +1,24 @@
+.button {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.iconWrapper {
+    margin-right: 15px;
+}
+
+.red {
+    background: rgb(244, 15, 2);
+}
+
+.blue {
+    background: rgb(76, 110, 245);
+}
+
+.green {
+    background: rgb(0,128,0);
+}

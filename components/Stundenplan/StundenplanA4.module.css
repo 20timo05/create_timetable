@@ -1,0 +1,73 @@
+.wrapper {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s ease;
+}
+
+.landscapeFormat {
+  width: 80vmin;
+  height: calc(80vmin * calc(21 / 29.7));
+}
+
+.portraitFormat {
+  height: 80vmin;
+  width: calc(80vmin * calc(21 / 29.7));
+}
+
+.landscapeFormat > section > div {
+  font-size: calc((80vmin - 20px) / 6 * 0.15);
+}
+
+.portraitFormat > section > div {
+  font-size: calc((calc(80vmin * calc(21 / 29.7)) - 20px) / 6 * 0.15);
+}
+
+.wrapper > header {
+  width: calc(100% - 40px - 2rem);
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: calc(80vmin * 0.025);
+}
+
+.iconWrapper {
+  cursor: pointer;
+  transition: 0.5s ease;
+  font-size: calc(80vmin * 0.05);
+}
+
+.timetable {
+  position: relative;
+  overflow: hidden;
+  height: 80vh;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 20px repeat(6, minmax(0, 1fr));
+  grid-gap: 2px;
+}
+
+.timetable::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  height: calc(100% - 36px);
+  width: calc(100% - 36px);
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.timetable > div {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+  min-height: 20px;
+  padding: 1vh 0;
+  font-size: 15px !important;
+}

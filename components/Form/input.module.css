@@ -1,0 +1,74 @@
+.inputWrapper > input,
+.button {
+  font-size: 0.6em;
+}
+
+.inputWrapper > input {
+  border: none;
+  outline: none;
+  height: 100%;
+  width: 100%;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.inputWrapper::before,
+.inputWrapper::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  height: 2.5px;
+}
+
+.inputWrapper::before {
+  width: 100%;
+  background-color: var(--grayText);
+}
+
+.inputWrapper::after {
+  width: 0;
+  transition: 0;
+  background-color: var(--focusColorLight);
+}
+
+.error::before {
+  background-color: var(--errorRed);
+}
+.error::after {
+  background-color: var(--errorRed);
+}
+
+.error > span {
+  color: var(--errorRed);
+}
+
+.placeholder {
+  font-size: 0.5em;
+  opacity: 0.5;
+  position: absolute;
+  top: 55%;
+  left: 3px;
+  transform: translateY(-55%);
+  pointer-events: none;
+}
+
+.focus > span {
+  animation: shift 0.3s forwards ease;
+}
+
+@keyframes shift {
+  to {
+    top: 0px;
+    font-size: 0.4em;
+    color: var(--focusColorDark);
+  }
+}
+
+.focus::after {
+  width: 100%;
+  transition: 0.3s ease;
+}

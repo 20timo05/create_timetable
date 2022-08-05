@@ -1,0 +1,10 @@
+.listItem {
+  list-style-type: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.listItem:hover,
+.focus {
+  background-color: var(--grayText);
+}

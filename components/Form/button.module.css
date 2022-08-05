@@ -1,0 +1,30 @@
+.button {
+  width: fit-content;
+  padding: 10px;
+  outline: none;
+  border: 3px solid var(--focusColorDark);
+  border-radius: 20px;
+  background: white;
+  color: var(--focusColorDark);
+  cursor: pointer;
+  font-size: 0.5em;
+  transition: 0.3s ease;
+}
+
+.button:hover,
+.button:focus {
+  background: var(--focusColorDark);
+  color: white;
+}
+
+.round {
+  height: 50px !important;
+  width: 50px !important;
+  border-radius: 50% !important;
+  font-weight: bold;
+  font-size: 25px !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

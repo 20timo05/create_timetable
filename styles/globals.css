@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans:wght@400;700&display=swap');
+
+:root {
+  --focusColorLight: #3498db;
+  --focusColorDark: #2980b9;
+  --grayText: rgb(196, 196, 196);
+  --errorRed: #c0392b;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', 'Lato', sans-serif;
+}
